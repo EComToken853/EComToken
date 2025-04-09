@@ -34,9 +34,11 @@ contract EComEscrow is Ownable, ReentrancyGuard {
     event OrderRefunded(uint256 indexed orderId);
     event OrderCanceled(uint256 indexed orderId);
     
-    constructor(address tokenAddress, address initialOwner) Ownable(initialOwner) {
+    constructor(address tokenAddress, address initialOwner) {
         ecomToken = IERC20(tokenAddress);
         arbitrator = initialOwner;
+        // Transfer ownership to initialOwner
+        transferOwnership(initialOwner);
     }
     
     function createOrder(address seller, uint256 amount, string calldata orderReference) external nonReentrant returns (uint256) {

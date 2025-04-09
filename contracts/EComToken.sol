@@ -20,10 +20,11 @@ contract EComToken is ERC20, Ownable, Pausable, ERC20Burnable, ERC20Snapshot {
 
     constructor(address initialOwner) 
         ERC20("ECommerce Global Token", "ECOM") 
-        Ownable(initialOwner)
     {
         feeCollector = initialOwner;
         _mint(initialOwner, MAX_SUPPLY);
+        // Transfer ownership to initialOwner
+        transferOwnership(initialOwner);
     }
 
     // Fee calculation modifier
@@ -37,15 +38,16 @@ contract EComToken is ERC20, Ownable, Pausable, ERC20Burnable, ERC20Snapshot {
         _;
     }
 
-    // Main transfer function with fee logic
-    function _update(address from, address to, uint256 amount)
+    // Override _beforeTokenTransfer to handle both ERC20 and ERC20Snapshot
+    function _beforeTokenTransfer(address from, address to, uint256 amount)
         internal
+        virtual
         override(ERC20, ERC20Snapshot)
         whenNotPaused
     {
         require(!blacklisted[from], "Sender blacklisted");
         require(!blacklisted[to], "Recipient blacklisted");
-        super._update(from, to, amount);
+        super._beforeTokenTransfer(from, to, amount);
     }
 
     // Merchant onboarding
