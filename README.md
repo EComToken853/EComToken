@@ -94,7 +94,7 @@ We welcome contributions! Follow these steps to contribute:
 ---
 
 ## 📧 **Contact**
-For any questions or suggestions, feel free to reach out at [pavankmr853@gmail.com](mailto:pavankmr853@gmail.com).
+For any questions or suggestions, feel free to reach out at [ecomtoken853@gmail.com](mailto: ecomtoken853@gmail.com).
 
 ---
 
