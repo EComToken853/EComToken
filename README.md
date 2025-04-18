@@ -9,7 +9,8 @@ Welcome to the **EComToken** repository! This project is designed to revolutioni
 - **Technology Stack**: 
   - **Smart Contracts**: Solidity (77% of the codebase)
   - **Frontend/Backend**: JavaScript (23% of the codebase)
-- **Purpose**: To create a secure and efficient token-based system for e-commerce transactions.
+- **EComToken Purpose**  
+EComToken revolutionizes global e-commerce by eliminating cross-border fees (0.25% vs. 3–5%) and enabling instant, irreversible blockchain payments. It empowers merchants with zero-fee tools, ensures compliance via KYC/AML safeguards, and bridges underbanked markets through decentralized, secure transactions. Built on audited smart contracts, EComToken aims to become Web3's universal payment layer for fair, borderless commerce.
 
 ---
 
