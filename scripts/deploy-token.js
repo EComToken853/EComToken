@@ -3,26 +3,24 @@ const hre = require("hardhat");
 async function main() {
   console.log("Deploying EComToken contract...");
   
-  // Get the ContractFactory
-  const EComToken = await hre.ethers.getContractFactory("EComToken");
-  
-  // Get the first account from the connected wallet
+  const EComToken = await hre.ethers.getContractFactory("EComPlatform"); // Make sure name matches your contract
+
   const [deployer] = await hre.ethers.getSigners();
   console.log("Deploying contracts with the account:", deployer.address);
-  
-  // Deploy the contract with the deployer address as initialOwner
+
+  // Optional: print balance
+  const balance = await hre.ethers.provider.getBalance(deployer.address);
+  console.log("Deployer balance:", hre.ethers.formatEther(balance), "ETH");
+
   const ecomToken = await EComToken.deploy(deployer.address);
-  
-  // Wait for deployment to complete
   await ecomToken.waitForDeployment();
-  
+
   const address = await ecomToken.getAddress();
   console.log("EComToken deployed to:", address);
-  
+
   return address;
 }
 
-// Execute the deployment
 main()
   .then((tokenAddress) => {
     console.log("Token deployment successful:", tokenAddress);
