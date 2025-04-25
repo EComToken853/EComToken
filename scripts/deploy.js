@@ -7,11 +7,23 @@ async function main() {
   const EComPlatform = await hre.ethers.getContractFactory("EComCombined");
   const ecomToken = await EComPlatform.deploy(deployer.address);
 
-  console.log("Waiting for deployment transaction to be mined...");
-  await ecomToken.waitForDeployment();
+  const deploymentTx = ecomToken.deploymentTransaction();
+  const receipt = await deploymentTx.wait();
 
   const address = await ecomToken.getAddress();
   console.log("EComCombined deployed to:", address);
+
+  console.log("Raw receipt values:");
+  console.log("  gasUsed:", receipt.gasUsed);
+  console.log("  gasPrice (from tx):", deploymentTx.gasPrice);
+
+  const gasUsed = BigInt(receipt.gasUsed);
+  const gasPrice = BigInt(deploymentTx.gasPrice);
+  const totalFee = gasUsed * gasPrice;
+
+  console.log("Gas used for deployment:", gasUsed.toString());
+  console.log("Total fee in wei:", totalFee.toString());
+  console.log("Total fee in ETH:", hre.ethers.formatEther(totalFee));
 
   return address;
 }
