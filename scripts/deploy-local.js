@@ -5,40 +5,34 @@ async function main() {
   console.log("Deploying contracts with the account:", deployer.address);
 
   const EComPlatform = await hre.ethers.getContractFactory("ECom");
-
   const ecomToken = await EComPlatform.deploy(deployer.address);
 
-  const deployTx = ecomToken.deploymentTransaction();
-  console.log("Deployment transaction sent. Tx Hash:", deployTx.hash);
-
-  const receipt = await hre.ethers.provider.waitForTransaction(deployTx.hash, 1);
-  if (!receipt) {
-    throw new Error("Transaction not found or failed");
-  }
+  const deploymentTx = ecomToken.deploymentTransaction();
+  const receipt = await deploymentTx.wait();
 
   const address = await ecomToken.getAddress();
-  console.log("ECom deployed to:", address);
+  console.log("EComCombined deployed to:", address);
 
   console.log("Raw receipt values:");
-  console.log("  gasUsed:", receipt.gasUsed.toString());
-  
-  const fullTx = await hre.ethers.provider.getTransaction(deployTx.hash);
-  console.log("  gasPrice:", fullTx.gasPrice.toString());
+  console.log("  gasUsed:", receipt.gasUsed);
+  console.log("  gasPrice (from tx):", deploymentTx.gasPrice);
 
   const gasUsed = BigInt(receipt.gasUsed);
-  const gasPrice = BigInt(fullTx.gasPrice);
+  const gasPrice = BigInt(deploymentTx.gasPrice);
   const totalFee = gasUsed * gasPrice;
 
   console.log("Gas used for deployment:", gasUsed.toString());
   console.log("Total fee in wei:", totalFee.toString());
   console.log("Total fee in ETH:", hre.ethers.formatEther(totalFee));
 
-  console.log(`Contract deployed successfully! View at: https://sepolia.etherscan.io/address/${address}`);
   return address;
 }
 
 main()
-  .then(() => process.exit(0))
+  .then((addr) => {
+    console.log("EComCombined deployment successful:", addr);
+    process.exit(0);
+  })
   .catch((error) => {
     console.error("Error during deployment:", error);
     process.exit(1);

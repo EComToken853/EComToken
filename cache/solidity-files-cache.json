@@ -571,10 +571,10 @@
         "ERC20Burnable"
       ]
     },
-    "C:\\Users\\Admin\\EComToken\\contracts\\EComCombined.sol": {
-      "lastModificationDate": 1745496609568,
-      "contentHash": "afddc15ce49425ca337a527d62616400",
-      "sourceName": "contracts/EComCombined.sol",
+    "C:\\Users\\Admin\\EComToken\\contracts\\ECom.sol": {
+      "lastModificationDate": 1745688518344,
+      "contentHash": "36e7aa131de1f8dccaacdcac9734d253",
+      "sourceName": "contracts/ECom.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
@@ -611,7 +611,7 @@
         "^0.8.20"
       ],
       "artifacts": [
-        "EComCombined"
+        "ECom"
       ]
     }
   }

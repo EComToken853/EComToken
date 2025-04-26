@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Snapshot.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract EComCombined is ERC20, Ownable, Pausable, ERC20Burnable, ERC20Snapshot, ReentrancyGuard {
+contract ECom is ERC20, Ownable, Pausable, ERC20Burnable, ERC20Snapshot, ReentrancyGuard {
     uint256 public constant MAX_SUPPLY = 100_000_000 * 10**18;
     uint256 public transactionFee = 25; // 0.25% in basis points
     address public feeCollector;
@@ -48,7 +48,7 @@ contract EComCombined is ERC20, Ownable, Pausable, ERC20Burnable, ERC20Snapshot,
     event OrderCanceled(uint256 indexed orderId);
 
     constructor(address initialOwner)
-        ERC20("ECommerce Global Token", "ECOM")
+        ERC20("ECom Global Token", "ECOM")
     {
         feeCollector = initialOwner;
         arbitrator = initialOwner;
