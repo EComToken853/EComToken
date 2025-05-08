@@ -453,8 +453,8 @@
       ]
     },
     "C:\\Users\\Admin\\EComToken\\contracts\\EComToken.sol": {
-      "lastModificationDate": 1745493354709,
-      "contentHash": "c296dd702108f1d04fda5cfe72c79094",
+      "lastModificationDate": 1746594982725,
+      "contentHash": "15de7a9e65dac4b9ae52920119ed9133",
       "sourceName": "contracts/EComToken.sol",
       "solcConfig": {
         "version": "0.8.20",
