@@ -1,6 +1,6 @@
 # EComToken
 
-Welcome to the **EComToken** repository! This project provides a robust framework for blockchain-based e-commerce token management, leveraging the power of smart contracts and JavaScript-based tools for seamless interaction with the blockchain network.
+Welcome to the **EComToken** repository! This project provides a robust framework for blockchain-based e-commerce token management, leveraging the power of smart contracts and JavaScript-based tools.
 
 ## Overview
 
@@ -10,14 +10,20 @@ EComToken is designed to support secure, decentralized, and efficient token mana
 
 ## Technology Stack
 
-- **Solidity**: 68% of the codebase, used for smart contract development.
-- **JavaScript**: 32% of the codebase, used for utilities and interaction scripts.
+- **Solidity**: 70.1% of the codebase, used for smart contract development.
+- **JavaScript**: 29.9% of the codebase, used for utilities and interaction scripts.
 
 ## Features
 
 - **Blockchain-Powered**: Implements decentralized token management.
 - **Secure Infrastructure**: Designed with security best practices for handling e-commerce transactions.
 - **Developer-Friendly**: Includes comprehensive tools and scripts for deployment and testing.
+
+## Recent Updates
+
+- **2025-05-08**: Added a deploy script for the Sepolia network for EComToken.
+- **2025-05-08**: Removed `.env` file from version control for improved security.
+- **2025-05-09**: Updated `FUNDING.yml` file for funding configurations.
 
 ## Getting Started
 
