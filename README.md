@@ -99,4 +99,7 @@ Thank you for your interest in **EComToken**. We look forward to your contributi
 
 Support the development of **EComToken** by sponsoring us!
 
-[![Sponsor](https://img.shields.io/badge/Sponsor-❤-red)](https://etherscan.io/address/0x4a96bae7b7e8626d06360a734e66b28bf6f6da51)
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%99%A1%20Ethereum-blue)](https://etherscan.io/address/0x4a96bae7b7e8626d06360a734e66b28bf6f6da51)
+
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%E2%98%95-yellow)](https://www.buymeacoffee.com/ecomtoken)
