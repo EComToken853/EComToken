@@ -1,5 +1,8 @@
 # EComToken
 
+![EComToken Logo](./ECT-3.png)
+
+
 Welcome to the **EComToken** repository! This project provides a robust framework for blockchain-based e-commerce token management, leveraging the power of smart contracts and JavaScript-based tools.
 
 ## Overview
