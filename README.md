@@ -42,12 +42,6 @@ EComToken is designed to support secure, decentralized, and efficient token mana
 - **Gas Costs**:
   - Deployment and transaction costs are logged for efficiency analysis.
 
-## Recent Updates
-
-- **2025-05-08**: Added a deploy script for the Sepolia network for EComToken.
-- **2025-05-08**: Removed `.env` file from version control for improved security.
-- **2025-05-09**: Updated `FUNDING.yml` file for funding configurations.
-
 ## Getting Started
 
 Follow the steps below to set up and use the project:
