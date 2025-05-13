@@ -2,7 +2,6 @@
 
 ![EComToken Logo](./ECT-3.png)
 
-
 Welcome to the **EComToken** repository! This project provides a robust framework for blockchain-based e-commerce token management, leveraging the power of smart contracts and JavaScript-based tools.
 
 ## Overview
@@ -21,6 +20,27 @@ EComToken is designed to support secure, decentralized, and efficient token mana
 - **Blockchain-Powered**: Implements decentralized token management.
 - **Secure Infrastructure**: Designed with security best practices for handling e-commerce transactions.
 - **Developer-Friendly**: Includes comprehensive tools and scripts for deployment and testing.
+- **Escrow Contract**: Supports secure transactions between parties by leveraging escrow functionalities.
+
+## Tokenomics
+
+- **Name**: ECom Token
+- **Symbol**: ECOM
+- **Initial Supply**: 100 million tokens
+- **Transaction Fee**: A fee of 1% is applied to transactions.
+- **Merchant Whitelisting**: Specific merchants can be whitelisted for exclusive functionalities.
+
+## Known Risks or Areas for Review
+
+- **Security Risks**:
+  - Blacklist Feature: Certain addresses can be blacklisted, preventing them from participating in token transfers.
+  - Escrow Contract: Relies on proper deployment and settings for secure operations.
+
+- **Development Practices**:
+  - Proper configuration of environment variables (e.g., `TOKEN_ADDRESS`) is critical.
+
+- **Gas Costs**:
+  - Deployment and transaction costs are logged for efficiency analysis.
 
 ## Recent Updates
 
@@ -97,12 +117,10 @@ For questions or support, please feel free to reach out via [GitHub](https://git
 
 Thank you for your interest in **EComToken**. We look forward to your contributions and feedback!
 
-
 ## Sponsor Us
 
 Support the development of **EComToken** by sponsoring us!
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%99%A1%20Ethereum-blue)](https://etherscan.io/address/0x4a96bae7b7e8626d06360a734e66b28bf6f6da51)
-
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%E2%98%95-yellow)](https://www.buymeacoffee.com/ecomtoken)
