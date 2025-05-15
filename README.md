@@ -2,119 +2,143 @@
 
 ![EComToken Logo](./ECT-3.png)
 
-Welcome to the **EComToken** repository! This project provides a robust framework for blockchain-based e-commerce token management, leveraging the power of smart contracts and JavaScript-based tools.
-
-## Overview
-
-EComToken is designed to support secure, decentralized, and efficient token management for e-commerce applications. The repository includes:
-- **Smart Contracts**: Written in Solidity, these contracts define the core logic of the token system.
-- **JavaScript Utilities**: Provide tools for deploying and interacting with the smart contracts.
-
-## Technology Stack
-
-- **Solidity**: 70.1% of the codebase, used for smart contract development.
-- **JavaScript**: 29.9% of the codebase, used for utilities and interaction scripts.
-
-## Features
-
-- **Blockchain-Powered**: Implements decentralized token management.
-- **Secure Infrastructure**: Designed with security best practices for handling e-commerce transactions.
-- **Developer-Friendly**: Includes comprehensive tools and scripts for deployment and testing.
-- **Escrow Contract**: Supports secure transactions between parties by leveraging escrow functionalities.
-
-## Tokenomics
-
-- **Name**: ECom Token
-- **Symbol**: ECOM
-- **Initial Supply**: 100 million tokens
-- **Transaction Fee**: A fee of 1% is applied to transactions.
-- **Merchant Whitelisting**: Specific merchants can be whitelisted for exclusive functionalities.
-
-## Known Risks or Areas for Review
-
-- **Security Risks**:
-  - Blacklist Feature: Certain addresses can be blacklisted, preventing them from participating in token transfers.
-  - Escrow Contract: Relies on proper deployment and settings for secure operations.
-
-- **Development Practices**:
-  - Proper configuration of environment variables (e.g., `TOKEN_ADDRESS`) is critical.
-
-- **Gas Costs**:
-  - Deployment and transaction costs are logged for efficiency analysis.
-
-## Getting Started
-
-Follow the steps below to set up and use the project:
-
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v12 or later)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- A local or hosted Ethereum development environment (e.g., [Hardhat](https://hardhat.org/), [Ganache](https://trufflesuite.com/ganache/))
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/EComToken853/EComToken.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd EComToken
-   ```
-
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-### Deployment
-
-1. Configure your deployment settings in the project configuration file (e.g., `hardhat.config.js`).
-2. Deploy the smart contracts:
-   ```bash
-   npx hardhat run scripts/deploy.js --network <network-name>
-   ```
-
-### Interaction
-
-Use the provided JavaScript utilities to interact with the deployed contracts. Example commands are included in the repository's scripts directory.
-
-## Contribution Guidelines
-
-We welcome contributions from the community! To contribute:
-
-1. Fork the repository.
-2. Create a new feature branch:
-   ```bash
-   git checkout -b feature/<feature-name>
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add <feature-description>"
-   ```
-4. Push to your branch:
-   ```bash
-   git push origin feature/<feature-name>
-   ```
-5. Open a Pull Request for review.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-## Contact
-
-For questions or support, please feel free to reach out via [GitHub](https://github.com/EComToken853).
+Welcome to the **EComToken** repository â€” powering secure, decentralized e-commerce through smart contracts and blockchain automation.
 
 ---
 
-Thank you for your interest in **EComToken**. We look forward to your contributions and feedback!
+## Overview
 
-## Sponsor Us
+**EComToken** is an ERC20-based utility token tailored for decentralized commerce. This repository contains:
+- **Solidity Smart Contracts**: Core logic for token management, fee control, escrow, and whitelisting.
+- **JavaScript Scripts**: For deployment, interaction, and utility functions using Hardhat.
 
-Support the development of **EComToken** by sponsoring us!
+---
 
-[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%99%A1%20Ethereum-blue)](https://etherscan.io/address/0x4a96bae7b7e8626d06360a734e66b28bf6f6da51)
+## Technology Stack
+
+- **Solidity** â€“ 70.1%: Core smart contracts
+- **JavaScript** â€“ 29.9%: Scripts for deployment and integration
+
+---
+
+## Features
+
+- **Decentralized Payment Infrastructure**  
+- **Initial Mintable Supply**: 100 million ECOM  
+- **Optional Minting Lock**: Finalize minting permanently via `finalizeMinting()`  
+- **Transaction Fee Logic**: 1% fee on transfers  
+- **Merchant Whitelisting**: Enable privileged features for selected addresses  
+- **Blacklist Protection**: Block malicious or restricted actors  
+- **Escrow Contract Ready**: Milestone-based secure payment channel  
+- **Future-Ready**: Axelar-compatible bridging (planned)
+
+---
+
+## Tokenomics
+
+| Parameter             | Value                         |
+|-----------------------|-------------------------------|
+| **Name**              | ECom Token                    |
+| **Symbol**            | ECOM                          |
+| **Initial Supply**    | 100,000,000 ECOM (minted)     |
+| **Decimals**          | 18                            |
+| **Mintable**          | âœ… Yes (by owner)            |
+| **Fixed Cap**         | âŒ No                        |
+| **Fee on Transfer**   | 1%                            |
+| **Owner Functions**   | Mint, whitelist, blacklist, pause
+
+---
+
+## Known Risks & Areas for Review
+
+- **Blacklist Control**  
+  Blacklisted addresses are fully restricted â€” ensure proper use and logging.
+
+- **Minting Flexibility**  
+  Owner can mint until explicitly locked via `finalizeMinting()`.
+
+- **Escrow Integration**  
+  Must be deployed separately and reviewed for security.
+
+- **Gas Costs**  
+  Some operations like whitelisting or snapshot may have higher gas usage.
+
+---
+
+## Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) v14+
+- [Hardhat](https://hardhat.org/)
+- A configured Ethereum wallet and provider (e.g., Infura or Alchemy)
+
+### Installation
+```bash
+git clone https://github.com/EComToken853/EComToken.git
+cd EComToken
+npm install
+```
+
+---
+
+## Deployment
+
+Update your deployment parameters in `hardhat.config.js` and run:
+
+```bash
+npx hardhat run scripts/deploy.js --network <network-name>
+```
+
+To verify on Etherscan:
+```bash
+npx hardhat run scripts/verify.js --network <network-name>
+```
+
+---
+
+## Interaction
+
+Use `scripts/interact.js` and other utilities to:
+- Mint tokens
+- Transfer ECOM
+- Whitelist/blacklist merchants
+- Test snapshot, pause, and escrow flows
+
+---
+
+## Contribution Guidelines
+
+We welcome open-source contributors!
+
+1. Fork this repo  
+2. Create a new branch:  
+   `git checkout -b feature/<feature-name>`  
+3. Commit and push changes:  
+   `git commit -m "Add <feature>" && git push origin feature/<feature-name>`  
+4. Open a Pull Request  
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Contact
+
+Reach out to us via [GitHub Discussions](https://github.com/EComToken853/EComToken/discussions) or join our [Discord Community](https://discord.gg/your-link).
+
+---
+
+## Sponsor EComToken
+
+Support the development of decentralized commerce:
+
+[![Sponsor in ETH](https://img.shields.io/badge/Sponsor-%E2%99%A1%20Ethereum-blue)](https://etherscan.io/address/0x4a96bae7b7e8626d06360a734e66b28bf6f6da51)
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%E2%98%95-yellow)](https://www.buymeacoffee.com/ecomtoken)
+
+---
+
+Thank you for supporting **EComToken** â€” letâ€™s build a better Web3 commerce future, together!
