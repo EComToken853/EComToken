@@ -2,7 +2,7 @@
 
 ![EComToken Logo](./ECT-3.png)
 
-Welcome to the **EComToken** repository â€” powering secure, decentralized e-commerce through smart contracts and blockchain automation.
+Welcome to the **EComToken** repository - powering secure, decentralized e-commerce through smart contracts and blockchain automation.
 
 ---
 
@@ -16,8 +16,8 @@ Welcome to the **EComToken** repository â€” powering secure, decentralized 
 
 ## Technology Stack
 
-- **Solidity** â€“ 70.1%: Core smart contracts
-- **JavaScript** â€“ 29.9%: Scripts for deployment and integration
+- **Solidity** - 70.1%: Core smart contracts
+- **JavaScript** - 29.9%: Scripts for deployment and integration
 
 ---
 
@@ -30,7 +30,7 @@ Welcome to the **EComToken** repository â€” powering secure, decentralized 
 - **Merchant Whitelisting**: Enable privileged features for selected addresses  
 - **Blacklist Protection**: Block malicious or restricted actors  
 - **Escrow Contract Ready**: Milestone-based secure payment channel  
-- **Future-Ready**: Axelar-compatible bridging (planned)
+- **Future-Ready**: bridging (planned)
 
 ---
 
@@ -52,7 +52,7 @@ Welcome to the **EComToken** repository â€” powering secure, decentralized 
 ## Known Risks & Areas for Review
 
 - **Blacklist Control**  
-  Blacklisted addresses are fully restricted â€” ensure proper use and logging.
+  Blacklisted addresses are fully restricted - ensure proper use and logging.
 
 - **Minting Flexibility**  
   Owner can mint until explicitly locked via `finalizeMinting()`.
@@ -141,4 +141,4 @@ Support the development of decentralized commerce:
 
 ---
 
-Thank you for supporting **EComToken** â€” letâ€™s build a better Web3 commerce future, together!
+Thank you for supporting **EComToken** - let's build a better Web3 commerce future, together!
