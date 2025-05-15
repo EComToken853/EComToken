@@ -42,8 +42,8 @@ Welcome to the **EComToken** repository â€” powering secure, decentralized 
 | **Symbol**            | ECOM                          |
 | **Initial Supply**    | 100,000,000 ECOM (minted)     |
 | **Decimals**          | 18                            |
-| **Mintable**          | âœ… Yes (by owner)            |
-| **Fixed Cap**         | âŒ No                        |
+| **Mintable**          | ✅ Yes (by owner)             |
+| **Fixed Cap**         | ❌ No                         |
 | **Fee on Transfer**   | 1%                            |
 | **Owner Functions**   | Mint, whitelist, blacklist, pause
 
