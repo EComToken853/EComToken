@@ -44,7 +44,7 @@ Welcome to the **EComToken** repository - powering secure, decentralized e-comme
 | **Decimals**          | 18                            |
 | **Mintable**          | ✅ Yes (by owner)             |
 | **Fixed Cap**         | ❌ No                         |
-| **Fee on Transfer**   | 1%                            |
+| **Fee on Transfer**   | 0.25%                         |
 | **Owner Functions**   | Mint, whitelist, blacklist, pause
 
 ---
