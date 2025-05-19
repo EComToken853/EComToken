@@ -49,6 +49,12 @@ Welcome to the **EComToken** repository - powering secure, decentralized e-comme
 
 ---
 
+## Token Supply Model
+
+EComToken starts with an initial supply and allows additional minting by the owner for early-stage needs like presale, liquidity, and ecosystem incentives. The contract includes a `finalizeMinting()` function that can permanently disable minting at any time, offering long-term supply transparency. This flexible model supports project growth while maintaining investor trust.
+
+---
+
 ## Known Risks & Areas for Review
 
 - **Blacklist Control**  
