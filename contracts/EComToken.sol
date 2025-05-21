@@ -126,3 +126,4 @@ contract EComToken is ERC20, Ownable, Pausable, ERC20Burnable, ERC20Snapshot {
         emit MintingFinalized();
     }
 }
+}
