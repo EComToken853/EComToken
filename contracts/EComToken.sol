@@ -10,22 +10,27 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Snapshot.sol";
 error Blacklisted(address user);
 error InvalidAddress();
 error FeeTooHigh();
+error AmountLessThanFee();
 
 contract EComToken is ERC20, Ownable, Pausable, ERC20Burnable, ERC20Snapshot {
-    uint256 public transactionFee = 25; // 0.25% (in basis points)
+    uint256 public transactionFee = 100; // 1% (in basis points)
     address public immutable feeCollector;
     
     mapping(address => bool) public whitelistedMerchants;
     mapping(address => bool) public blacklisted;
+    
+    mapping(address => uint256) public lastSnapshotTime;
+    uint256 public snapshotCooldown = 10 minutes;
     
     bool public mintingFinalized;
     
     event MerchantWhitelisted(address indexed merchant);
     event MerchantRemoved(address indexed merchant);
     event BlacklistUpdated(address indexed account, bool status);
-    event FeesCollected(address indexed from, uint256 amount);
+    event FeesCollected(address indexed from, address indexed to, uint256 amount);
     event TokensMinted(address indexed to, uint256 amount);
     event MintingFinalized();
+    event TransactionFeeUpdated(uint256 oldFee, uint256 newFee);
     
     constructor(address initialOwner)
         ERC20("ECommerce Global Token", "ECOM")
@@ -57,8 +62,9 @@ contract EComToken is ERC20, Ownable, Pausable, ERC20Burnable, ERC20Snapshot {
         
         if (_fee > 0 && !whitelistedMerchants[sender]) {
             feeAmount = (amount * _fee) / 10000;
+            if (amount <= feeAmount) revert AmountLessThanFee();
             super._transfer(sender, feeCollector, feeAmount);
-            emit FeesCollected(sender, feeAmount);
+            emit FeesCollected(sender, feeCollector, feeAmount);
         }
         
         super._transfer(sender, recipient, amount - feeAmount);
@@ -80,6 +86,7 @@ contract EComToken is ERC20, Ownable, Pausable, ERC20Burnable, ERC20Snapshot {
     }
     
     function whitelistMerchant(address merchant) external onlyOwner {
+        if (merchant == address(0)) revert InvalidAddress();
         whitelistedMerchants[merchant] = true;
         emit MerchantWhitelisted(merchant);
     }
@@ -90,13 +97,16 @@ contract EComToken is ERC20, Ownable, Pausable, ERC20Burnable, ERC20Snapshot {
     }
     
     function setBlacklist(address account, bool status) external onlyOwner {
+        if (account == feeCollector) revert InvalidAddress();
         blacklisted[account] = status;
         emit BlacklistUpdated(account, status);
     }
     
     function setTransactionFee(uint256 newFee) external onlyOwner {
         if (newFee > 100) revert FeeTooHigh();
+        uint256 oldFee = transactionFee;
         transactionFee = newFee;
+        emit TransactionFeeUpdated(oldFee, newFee);
     }
     
     function pause() external onlyOwner {
@@ -108,6 +118,11 @@ contract EComToken is ERC20, Ownable, Pausable, ERC20Burnable, ERC20Snapshot {
     }
     
     function snapshot() external onlyOwner {
+        require(
+            block.timestamp > lastSnapshotTime[msg.sender] + snapshotCooldown,
+            "Snapshot cooldown active"
+        );
+        lastSnapshotTime[msg.sender] = block.timestamp;
         _snapshot();
     }
     
