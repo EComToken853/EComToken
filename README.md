@@ -137,14 +137,3 @@ Reach out to us via [GitHub Discussions](https://github.com/EComToken853/EComTok
 
 ---
 
-## Sponsor EComToken
-
-Support the development of decentralized commerce:
-
-[![Sponsor in ETH](https://img.shields.io/badge/Sponsor-%E2%99%A1%20Ethereum-blue)](https://etherscan.io/address/0x4a96bae7b7e8626d06360a734e66b28bf6f6da51)
-
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%E2%98%95-yellow)](https://www.buymeacoffee.com/ecomtoken)
-
----
-
-Thank you for supporting **EComToken** - let's build a better Web3 commerce future, together!
